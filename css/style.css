@@ -558,6 +558,45 @@ button:focus{
 
 
 /*------------------------------------------------------------------
+    Photography
+-------------------------------------------------------------------*/
+
+.photography-box{
+	padding: 90px 0px;
+}
+
+.align-left {
+    text-align: left;
+}
+.align-right {
+    text-align: right;
+}
+.main-photography-box{
+	position: relative;
+	word-wrap: break-word;
+}
+
+.main-photography-box .timeline-text-content {
+    padding: 30px 35px;
+	background: #f1f1f1;
+}
+.row-heading
+{
+  font-size:1.3rem;
+  font-weight:bold;
+}
+.total
+{
+  font-size:2rem;
+  font-weight:bold;
+}
+.total-val
+{
+  font-size:2rem;
+  border: 2
+}
+
+/*------------------------------------------------------------------
     Family
 -------------------------------------------------------------------*/
 
@@ -812,7 +851,6 @@ select.form-control:not([size]):not([multiple]){
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
-
 
 
 
