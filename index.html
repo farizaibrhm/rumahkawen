@@ -57,8 +57,8 @@
                 <div>
                     <ul class="navbar">
                         <li><a class="link active" href="#home">Home</a></li>
-                        <li><a class="link" href="#about">About Us</a></li>
-                        <li><a class="link" href="#story">Wedding Venue</a></li>
+                        <li><a class="link" href="#about">Review</a></li>
+                        <li><a class="link" href="#venue">Wedding Venue</a></li>
 						<li><a class="link" href="#photography">Photography</a></li>
 						<li><a class="link" href="#videography">Videography</a></li>
                         <li><a class="link" href="#family">Family</a></li>
@@ -977,37 +977,30 @@
 	<!-- End Contact -->
 
 	<!-- Start Events -->
+	
+
 	<div id="calculator" class="events-box">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="title-box">
-						<h2>This is your total amount</h2>
-						<p>Please check your total amount below.</p>
+						<h2>Calculate Total Amount</h2>
+						<p> Calculate Your Total Amount Here </p>
 					</div>
 				</div>
+
+				<div class="row">	
+					<input type="button" id="calculate-total-button" value="Calculate Total" onclick="calculateTotalCost()">
+							<div class="col-9 text-right total">
+							Total
+							<div id="total-cost">
+	</div>
 			</div>
-			<div class="container">
-				<div class="row">
-					
-						
-						<input type="button" id="calculate-total-button" value="Calculate Total" onclick="calculateTotalCost()">
-
-
-							
-								<div class="col-9 text-right total">
-								Total
-
-									<div id="total-cost">
-
-									</div>						
-							
-
-
-				
-			  </div>
+			
 		</div>
 	</div>
+
+
 <script>
 
 function calculateTotalCost() {
@@ -1027,7 +1020,7 @@ function calculateTotalCost() {
 	<!-- End Events -->
 	
 	<!-- Start Footer -->
-	<footer class="footer-box">
+	<footer class="footer-box ">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
