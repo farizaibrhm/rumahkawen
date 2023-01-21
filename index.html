@@ -744,7 +744,7 @@
 			  </tbody>
 			</table>
 
-			<input type="button" id="calculate-kompang-button" value="Calculate Venue" onclick="calculateKompangCost()">
+			<input type="button" id="calculate-kompang-button" value="Calculate Kompang" onclick="calculateKompangCost()">
 
 
 			<div class="row my-4">
@@ -977,28 +977,30 @@
 	<!-- End Contact -->
 
 	<!-- Start Events -->
-	
 
-	<div id="calculator" class="events-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="title-box">
-						<h2>Calculate Total Amount</h2>
-						<p> Calculate Your Total Amount Here </p>
-					</div>
-				</div>
+	<div class="row my-3">
+		<div class="col-6">
+			<h2>Calculate Total Amount</h2>
+			<p> Calculate Your Total Amount Here </p>
+		</div>
+		<input type="button" id="calculate-total-button" value="Calculate Total" onclick="calculateTotalCost()">
 
-				<div class="row">	
-					<input type="button" id="calculate-total-button" value="Calculate Total" onclick="calculateTotalCost()">
-							<div class="col-9 text-right total">
-							Total
-							<div id="total-cost">
 	</div>
-			</div>
-			
+	  
+	  
+	<div class="row my-4">
+		<div class="col-9 text-right total">
+		 Total
+		</div>
+		
+		<div class="col-2 total-val" id="total-cost">
+		  <span id="total_valuedress">0</span>
 		</div>
 	</div>
+
+	
+
+	
 
 
 <script>
