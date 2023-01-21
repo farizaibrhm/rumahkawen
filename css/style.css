@@ -587,12 +587,12 @@ button:focus{
 }
 .total
 {
-  font-size:2rem;
+  font-size:1rem;
   font-weight:bold;
 }
 .total-val
 {
-  font-size:2rem;
+  font-size:1rem;
   border: 2
 }
 
