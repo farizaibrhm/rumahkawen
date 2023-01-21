@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
  
      <!-- Site Metas -->
-    <title>The Real Wedding - Responsive OnePage HTML5 Template</title>  
+    <title>Rumah Kahwen</title>  
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -60,11 +60,11 @@
                         <li><a class="link" href="#about">About Us</a></li>
                         <li><a class="link" href="#story">Wedding Venue</a></li>
 						<li><a class="link" href="#photography">Photography</a></li>
-						<li><a class="link" href="#story3">Videography</a></li>
+						<li><a class="link" href="#videography">Videography</a></li>
                         <li><a class="link" href="#family">Family</a></li>
                         <li><a class="link" href="#kompang">Kompang</a></li>
                         <li><a class="link" href="#events">MC</a></li>
-						<li><a class="link" href="#weddingdress">Wedding Dress</a></li>
+						<li><a class="link" href="#calculator">Wedding Dress</a></li>
                     </ul>
                 </div>
             </div>
@@ -182,16 +182,109 @@
 		 	</div>
 		</div>
 	</div>
+
+	<div class="container">
+		<div class="row">
+		  <div class="col-12">
+			<table class="table table-bordered">
+			  <thead>
+				<tr>
+				  <th scope="col">Select</th>
+				  <th scope="col">Venue</th>
+				  <th scope="col">Price</th>
+				  <th scope="col">Day</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+					<td>
+						<input type="radio" id="rb" name="wedding-venue" value="4000"><br>
+					</td>
+				  <td>Royal Ballroom</td>
+				  <td>RM 4000</td>
+				  <td>
+					<label for="rb-qty">Day:</label>
+					<input type="number" id="rb-qty" value="1"><br>
+				  </td>
+				</tr>
+				<tr>
+					<td>
+						<input type="radio" id="gb" name="wedding-venue" value="5000"><br>
+					</td>
+				  <td>Grand Ballroom</td>
+				  <td>RM 5000</td>
+				  <td>
+					<label for="gb-qty">Day:</label>
+					<input type="number" id="gb-qty" value="1"><br>
+				  </td>
+				</tr>
+
+				<tr>
+					<td>
+						<input type="radio" id="gargb" name="wedding-venue" value="4000"><br>
+					</td>
+				  <td>Garden Ballroom</td>
+				  <td>RM 4000</td>
+				  <td>
+					<label for="gargb-qty">Day:</label>
+					<input type="number" id="gargb-qty" value="1"><br>
+				  </td>
+				</tr>
+			  </tbody>
+			</table>
+
+			<input type="button" id="calculate-venue-button" value="Calculate Venue" onclick="calculateVenueCost()">
+
+
+			<div class="row my-4">
+				<div class="col-9 text-right total">
+				 Total
+				</div>
+				
+				<div class="col-2 total-val">
+					<div id="total-ven-cost"></div>
+				</div>
+			  </div>
+		  </div>
+		  
+		</div>
+	  </div>
+
+	  <script>
+		function calculateVenueCost() {
+
+		var ventotalCost = 0;
+		var royalballroom = document.getElementById("rb");
+		var grandballroom = document.getElementById("gb");
+		var gardenballroom = document.getElementById("gargb");
+
+		var royalQuantity = document.getElementById("rb-qty").value;
+		var grandQuantity = document.getElementById("gb-qty").value;
+		var gardenQuantity = document.getElementById("gargb-qty").value;
+
+		if (royalballroom.checked) {
+			ventotalCost = 4000 * royalQuantity;
+		}
+		if (grandballroom.checked) {
+			ventotalCost = 5000 * grandQuantity;
+		}
+		if (gardenballroom.checked) {
+			ventotalCost = 4000 * gardenQuantity;
+		}
+		document.getElementById("total-ven-cost").innerHTML = "RM" + ventotalCost;
+
+		return ventotalCost;
+
+	}
+	  </script>
 	   <!-- End Venue -->
 
 	<div id="photography" class="story-box main-photography-box">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="photography-box">
 						<h2>Photography Package</h2>
 						<p>Create your memories with Rumah Kawen.</p>
-					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 col-sm-12">
 					<div class="single-team-member">
@@ -242,7 +335,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="container mt-4">
+
+			
+	<div class="container mt-4">
       <div class="row">
         <div class="col-6 row-heading">
           Item
@@ -303,6 +398,141 @@
       </div>
       
     </div>
+
+	<!-- Start Videography -->
+	<div id="videography" class="story-box main-timeline-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="title-box">
+						<h2>Videography Services</h2>
+						<p>These are some videography services that we provided. Play the video to get some glimpse of our past services.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row timeline-element separline">
+				<div class="timeline-date-panel col-xs-12 col-md-6  align-left">         
+                    <video width="520" height="300" controls>
+						<source src="images/classictheme.mp4" type="video/mp4">
+					</video>
+				</div>
+				<span class="iconBackground"></span>
+				<div class="col-xs-12 col-md-6 align-left">
+					<div class="timeline-text-content">
+						<h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-font">Classic Video Theme</h4>
+						<p class="mbr-timeline-text mbr-fonts-style display-7">
+							<b>Price : RM 1500</b>
+						</p>
+						<p class="mbr-timeline-text mbr-fonts-style display-7">
+							The classic theme of the wedding ceremony is one of the themes that many people are interested in now.
+						</p>
+					 </div>
+				</div>
+			</div>
+			<div class="row timeline-element reverse separline">
+				<div class="timeline-date-panel col-xs-12 col-md-6  align-left">         
+                    <div class="time-line-date-content" >
+                        <video width="520" height="300" controls>
+							<source src="images/moderntheme.mp4" type="video/mp4">
+						</video>
+                    </div>
+				</div>
+				<span class="iconBackground"></span>
+				<div class="col-xs-12 col-md-6 align-right">
+					<br>
+					<div class="timeline-text-content">
+						<h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-font">Modern Video Theme</h4>
+						<p class="mbr-timeline-text mbr-fonts-style display-7">
+							<b>Price : RM 2000</b>
+						</p>
+						<p class="mbr-timeline-text mbr-fonts-style display-7">
+							Modern theme suitable for our Royal Ballroom or Grand Ballroom venue. 
+						</p>
+					 </div>
+				</div>
+			</div>	
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+		  <div class="col-12">
+			<table class="table table-bordered">
+			  <thead>
+				<tr>
+				  <th scope="col">Select</th>
+				  <th scope="col">Services</th>
+				  <th scope="col">Price</th>
+				  <th scope="col">Day</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+					<td>
+						<input type="radio" id="classictheme" name="videography-service" value="1500"><br>
+					</td>
+				  <td>Classic Video Theme</td>
+				  <td>RM 1500</td>
+				  <td>
+					<label for="classic-qty">Day:</label>
+					<input type="number" id="classic-qty" value="1"><br>
+				  </td>
+				</tr>
+				<tr>
+					<td>
+						<input type="radio" id="moderntheme" name="videography-service" value="2000"><br>
+					</td>
+				  <td>Modern Video Theme</td>
+				  <td>RM 2000</td>
+				  <td>
+					<label for="modern-qty">Day:</label>
+					<input type="number" id="modern-qty" value="1"><br>
+				  </td>
+				</tr>
+			  </tbody>
+			</table>
+
+			<input type="button" id="calculate-video-button" value="Calculate Video" onclick="calculateVidCost()">
+
+
+			<div class="row my-4">
+				<div class="col-9 text-right total">
+				 Total
+				</div>
+				
+				<div class="col-2 total-val">
+					<div id="total-vid-cost"></div>
+				</div>
+			</div>
+		  </div>
+		  
+		</div>
+	  </div>
+
+	  <script>
+		function calculateVidCost() {
+
+		var vidtotalCost = 0;
+		var classictheme = document.getElementById("classictheme");
+		var moderntheme = document.getElementById("moderntheme");
+		var classicQuantity = document.getElementById("classic-qty").value;
+		var modernQuantity = document.getElementById("modern-qty").value;
+
+		if (classictheme.checked) {
+			vidtotalCost = 1500 * classicQuantity;
+		}
+		if (moderntheme.checked) {
+			vidtotalCost = 2000 * modernQuantity;
+		}
+		document.getElementById("total-vid-cost").innerHTML = "RM" + vidtotalCost;
+
+		return vidtotalCost;
+
+	}
+	  </script>
+	
+	
+	<!-- End Videography -->
 	
 	<div id="story3" class="story-box main-timeline-box">
 		<div class="container">
@@ -486,7 +716,71 @@
 			</div>	
 		</div>
 	</div>
+
+	<div class="container">
+		<div class="row">
+		  <div class="col-12">
+			<table class="table table-bordered">
+			  <thead>
+				<tr>
+				  <th scope="col">Select</th>
+				  <th scope="col">Service</th>
+				  <th scope="col">Price</th>
+				  <th scope="col">Day</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+					<td>
+						<input type="radio" id="kpg" name="kompang-service" value="500"><br>
+					</td>
+				  <td>Package Kompang Dipalu</td>
+				  <td>RM 500</td>
+				  <td>
+					<label for="kpg-qty">Day:</label>
+					<input type="number" id="kpg-qty" value="1"><br>
+				  </td>
+				</tr>
+			  </tbody>
+			</table>
+
+			<input type="button" id="calculate-kompang-button" value="Calculate Venue" onclick="calculateKompangCost()">
+
+
+			<div class="row my-4">
+				<div class="col-9 text-right total">
+				 Total
+				</div>
+				
+				<div class="col-2 total-val">
+					<div id="total-kpg-cost"></div>
+				</div>
+			  </div>
+		  </div>
+		  
+		</div>
+	  </div>
+
+	  <script>
+		function calculateKompangCost() {
+
+		var kpgtotalCost = 0;
+		var kompang = document.getElementById("kpg");
+
+		var kpgQuantity = document.getElementById("kpg-qty").value;
+
+		if (kompang.checked) {
+			kpgtotalCost = 500 * kpgQuantity;
+		}
+		document.getElementById("total-kpg-cost").innerHTML = "RM" + kpgtotalCost;
+
+		return kpgtotalCost;
+
+	}
+	  </script>
 	<!-- End Kompang -->
+
+	
 
 	<!-- Start Gallery -->
 	<!-- <div id="gallery" class="gallery-box">
@@ -681,13 +975,63 @@
 		</div>
 	</div>
 	<!-- End Contact -->
+
+	<!-- Start Events -->
+	<div id="calculator" class="events-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="title-box">
+						<h2>This is your total amount</h2>
+						<p>Please check your total amount below.</p>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					
+						
+						<input type="button" id="calculate-total-button" value="Calculate Total" onclick="calculateTotalCost()">
+
+
+							
+								<div class="col-9 text-right total">
+								Total
+
+									<div id="total-cost">
+
+									</div>						
+							
+
+
+				
+			  </div>
+		</div>
+	</div>
+<script>
+
+function calculateTotalCost() {
+
+		var ventotalCost = calculateVenueCost();
+		var vidtotalCost = calculateVidCost();
+		var kpgtotalCost = calculateKompangCost();
+		var photototalCost = calculateTotalPhotography();
+		var weddingdresstotalCost = calculateTotalWeddingDress();
+
+		var totalCost = ventotalCost + vidtotalCost + kpgtotalCost + photototalCost + weddingdresstotalCost ;
+
+		document.getElementById("total-cost").innerHTML = "RM" + totalCost;
+	}
+</script>
+	
+	<!-- End Events -->
 	
 	<!-- Start Footer -->
 	<footer class="footer-box">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">The Real Wedding</a> Design By : <a href="https://html.design/">html design</a></p>
+					<p class="footer-company-name">All Rights Reserved. &copy; 2018 <a>Rumah Kawen</a> Design By : <a href="https://html.design/">html design</a></p>
 				</div>
 			</div>
 		</div>
@@ -695,6 +1039,7 @@
 	<!-- End Footer -->
 
 	<!-- ALL JS FILES -->
+	 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
