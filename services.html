@@ -656,14 +656,14 @@
 	</div> -->
 	<!-- End Gallery -->
 	
-	<!-- Start Events -->
+	<!-- Start Emcee -->
 	<div id="events" class="events-box">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="title-box">
-						<h2>Booking</h2>
-						<p> Booking pakej perkahwinan anda dengan kami! </p>
+						<h2>Emcee</h2>
+						<p> Wedding Emcee is very crucial in making the wedding event more memorable! </p>
 					</div>
 				</div>
 			</div>
@@ -671,37 +671,132 @@
 				<div class="col-lg-4 col-md-6 col-sm-12">
 					<div class="event-inner">
 						<div class="event-img">
-							<img class="img-fluid" src="images/event-img-01.jpg" alt="" />
+							<img class="img-fluid" src="images/emcee1.jpg" alt="" />
 						</div>
-						<h2>2 June 2018 Engagement</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
-						<a href="#">See location ></a>
+						<h2>Emcee Hidayat Shukor</h2>
+						<p>Professional articulation with nice intonation. Fluent in English. Experienced in big weddings. Great in engaging the audience.      </p>
+						<p><b>RM 1,500</b></p>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 col-sm-12">
 					<div class="event-inner">
 						<div class="event-img">
-							<img class="img-fluid" src="images/event-img-02.jpg" alt="" />
+							<img class="img-fluid" src="images/emcee2.JPG" alt="" />
 						</div>
-						<h2>3 June 2018 Main Ceremony </h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
-						<a href="#">See location ></a>
+						<h2>Emcee Raja Rashtam </h2>
+						<p> Sweet, simple and straight to the point. Very composed emcee. Malay Wedding Emcee. </p>
+						<p><b>RM 700</b></p>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 col-sm-12">
 					<div class="event-inner">
 						<div class="event-img">
-							<img class="img-fluid" src="images/event-img-03.jpg" alt="" />
+							<img class="img-fluid" src="images/emcee3.JPG" alt="" />
 						</div>
-						<h2>4 June 2018 Wedding party </h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
-						<a href="#">See location ></a>
+						<h2>Emcee MinMin </h2>
+						<p>Excellent spoken English, Chinese & Malay. Games during wedding, made everyone laugh. Hilarious.  </p>
+						<p><b>RM 1,100</b></p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- End Events -->
+
+	<div class="container">
+		<div class="row">
+		  <div class="col-12">
+			<table class="table table-bordered">
+			  <thead>
+				<tr>
+				  <th scope="col">Select</th>
+				  <th scope="col">Venue</th>
+				  <th scope="col">Price</th>
+				  <th scope="col">Day</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+					<td>
+						<input type="radio" id="hs" name="emcee" value="1500"><br>
+					</td>
+				  <td>Emcee Hidayat Shukor</td>
+				  <td>RM 1,500</td>
+				  <td>
+					<label for="hs-qty">Day:</label>
+					<input type="number" id="hs-qty" value="0"><br>
+				  </td>
+				</tr>
+				<tr>
+					<td>
+						<input type="radio" id="rr" name="emcee" value="700"><br>
+					</td>
+				  <td>Emcee Raja Rashtam </td>
+				  <td>RM 700</td>
+				  <td>
+					<label for="rr-qty">Day:</label>
+					<input type="number" id="rr-qty" value="0"><br>
+				  </td>
+				</tr>
+
+				<tr>
+					<td>
+						<input type="radio" id="mm" name="emceee" value="1100"><br>
+					</td>
+				  <td>Emcee MinMin </td>
+				  <td>RM 1,100</td>
+				  <td>
+					<label for="mm-qty">Day:</label>
+					<input type="number" id="mm-qty" value="0"><br>
+				  </td>
+				</tr>
+			  </tbody>
+			</table>
+
+			<input type="button" id="calculate-emcee-button" value="Calculate Emcee" onclick="calculateEmceeCost()">
+
+
+			<div class="row my-4">
+				<div class="col-9 text-right total">
+				 Total
+				</div>
+				
+				<div class="col-2 total-val">
+					<div id="total-emcee-cost"></div>
+				</div>
+			  </div>
+		  </div>
+		  
+		</div>
+	  </div>
+
+	  <script>
+		function calculateEmceeCost() {
+
+		var emceetotalCost = 0;
+		var hs = document.getElementById("hs");
+		var rr = document.getElementById("rr");
+		var mm = document.getElementById("mm");
+
+		var hsQuantity = document.getElementById("hs-qty").value;
+		var rrQuantity = document.getElementById("rr-qty").value;
+		var mmQuantity = document.getElementById("mm-qty").value;
+
+		if (hs.checked) {
+			emceetotalCost = 1500 * hsQuantity;
+		}
+		if (rr.checked) {
+			emceetotalCost = 700 * rrQuantity;
+		}
+		if (mm.checked) {
+			emceetotalCost = 1100 * mmQuantity;
+		}
+		document.getElementById("total-emcee-cost").innerHTML = "RM" + emceetotalCost;
+
+		return emceetotalCost;
+
+	}
+	  </script>
+	<!-- End Emcee -->
 	
 	<!-- Start Contact -->
 	<div id="weddingdress" class="contact-box">
