@@ -707,8 +707,13 @@
 			RM
 		  <span id="total_valueCost">0</span>
 		</div>
-	
 	</div>
+
+	<div class="row my-4">
+		<div class="col-12 text-right" id="result">
+		</div>
+	</div>
+
 	  <button id="buttonBook" class="buttonbook" >Book Now</button><br><br>
 	  <button onclick="window.print()" class="buttonsave">Save as PDF</button>
 <br><br>
@@ -789,6 +794,7 @@
 		var custno = document.getElementById("custno").value;
 		var custemail = document.getElementById("custemail").value;
 		var custdate = document.getElementById("custdate").value;
+		var custnotes = document.getElementById("custnotes").value;
 		var img = document.getElementById("img").value;
 
 		var txt;
@@ -801,6 +807,13 @@
 		if (confirm("Are you sure you want to confirm your booking ?")) {
 			txt = "You pressed OK!";
 			alert("Thank you for your booking! We will arrange an appointment for you with Rumah kawen team, as soon as possible. Have a nice day.");
+
+			document.getElementById("result").innerHTML = "<b>" + "Booking Details" + "</b>"+ "<br>" + "<br>" + "<b>" + "Name: "  + "</b>" + custname + 
+																									"<br>"+ "<b>" + "Phone Number: " + "</b>" + custno + 
+																									"<br>"+ "<b>" + "Email: " + "</b>" + custemail + 
+																									"<br>"+ "<b>" + "Date: " + "</b>" + custdate + 
+																									"<br>"+ "<b>" + "Notes: " + "</b>" + custnotes + 
+																									"<br>"+ "<b>" + "Attachment: " + "</b>" + img;
 		} else {
 			txt = "You pressed Cancel!";
 		}
