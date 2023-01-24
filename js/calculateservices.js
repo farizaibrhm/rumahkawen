@@ -1,5 +1,41 @@
+        // Wedding Venue
+        
+        function calculateTotalWeddingVenue()
+        {
+          let unit_price={
+            rb: 4000,
+            gb: 5000,
+            garb: 6000
+          };
+          let item_price={}
+          
+          item_price.rb = ($("#qty_rb").val() * unit_price.rb )
+          $("#price_rb").val(item_price.rb);
+          
+          item_price.gb = ($("#qty_gb").val() * unit_price.gb)
+          $("#price_gb").val(item_price.gb);
+          
+          item_price.garb = ($("#qty_garb").val() * unit_price.garb)
+          $("#price_garb").val(item_price.garb);  
+            
+          
+          let totalWeddingVenue = item_price.rb + item_price.gb + item_price.garb ;
+        
+         
+          $("#total_valueWeddingVenue").text(totalWeddingVenue);
+        
+          return totalWeddingVenue;
+          
+        }
+        
+        $(function()
+         {
+            $(".qty").on("change keyup",calculateTotalWeddingVenue)
+        })
 
-		function calculateTotalWeddingDress()
+    
+    
+    function calculateTotalWeddingDress()
         {
           let unit_price={
             wd: 1500
@@ -10,11 +46,11 @@
           $("#price_wd").val(item_price.wd);
             
           
-          let total = item_price.wd;
+          let totalWeddingDress = item_price.wd;
         
-          $("#total_valuedress").text(total);
+          $("#total_valueWeddingDress").text(totalWeddingDress);
     
-          return total;
+          return totalWeddingDress;
           
         }
         
@@ -43,12 +79,12 @@
           $("#price_gp").val(item_price.gp);  
             
           
-          let total = item_price.bp + item_price.sp + item_price.gp ;
+          let totalPhotography = item_price.bp + item_price.sp + item_price.gp ;
         
          
-          $("#total_value").text(total);
+          $("#total_valuePhotography").text(totalPhotography);
         
-          return total;
+          return totalPhotography;
           
         }
         
@@ -57,59 +93,113 @@
             $(".qty").on("change keyup",calculateTotalPhotography)
         })
 
-        function calculateVenueCost()
+        
+        function calculateTotalVideography()
         {
           let unit_price={
-            rb: 4000,
-            gb: 5000,
-            garb: 6000
+            cv: 1500,
+            mv: 2000
           };
           let item_price={}
           
-          item_price.rb = ($("#qty_rb").val() * unit_price.rb )
-          $("#price_rb").val(item_price.rb);
+          item_price.cv = ($("#qty_cv").val() * unit_price.cv )
+          $("#price_cv").val(item_price.cv);
           
-          item_price.gb = ($("#qty_gb").val() * unit_price.gb)
-          $("#price_gb").val(item_price.gb);
+          item_price.mv = ($("#qty_mv").val() * unit_price.mv )
+          $("#price_mv").val(item_price.mv);
           
-          item_price.garb = ($("#qty_garb").val() * unit_price.garb)
-          $("#price_garb").val(item_price.garb);  
             
           
-          let total = item_price.rb + item_price.gb + item_price.garb ;
+          let totalVideography = item_price.cv + item_price.mv ;
         
          
-          $("#total_valueVenue").text(total);
+          $("#total_valueVideography").text(totalVideography);
         
-          return total;
+          return totalVideography;
           
         }
         
         $(function()
          {
-            $(".qty").on("change keyup",calculateVenueCost)
+            $(".qty").on("change keyup",calculateTotalVideography)
         })
-
-
-        function calculateVidCost() {
-
-            var vidtotalCost = 0;
-            var classictheme = document.getElementById("classictheme");
-            var moderntheme = document.getElementById("moderntheme");
-            var classicQuantity = document.getElementById("classic-qty").value;
-            var modernQuantity = document.getElementById("modern-qty").value;
-    
-            if (classictheme.checked) {
-                vidtotalCost = 1500 * classicQuantity;
-            }
-            if (moderntheme.checked) {
-                vidtotalCost = 2000 * modernQuantity;
-            }
-            document.getElementById("total-vid-cost").innerHTML = "RM" + vidtotalCost;
-    
-            return vidtotalCost;
-    
+  
+        function calculateKompangCost()
+        {
+          {
+            let unit_price={
+              kompang: 500
+            };
+            let item_price={}
+            
+            item_price.kompang = ($("#qty_kompang").val() * unit_price.kompang)
+            $("#price_kompang").val(item_price.kompang);
+            
+            let totalKompang = item_price.kompang;
+          
+           
+            $("#total_valueKompang").text(totalKompang);
+          
+            return totalKompang;
+          
+          }
         }
+          $(function()
+           {
+              $(".qty").on("change keyup",calculateKompangCost)
+          })
+
+          function calculateTotalEmcee()
+          {
+            let unit_price={
+              hs: 1500,
+              rr: 700,
+              mm: 1100
+            };
+            let item_price={}
+            
+            item_price.hs = ($("#qty_hs").val() * unit_price.hs )
+            $("#price_hs").val(item_price.hs);
+            
+            item_price.rr = ($("#qty_rr").val() * unit_price.rr )
+            $("#price_rr").val(item_price.rr);
+            
+            item_price.mm = ($("#qty_mm").val() * unit_price.mm)
+            $("#price_mm").val(item_price.mm);  
+              
+            
+            let totalEmcee = item_price.hs + item_price.rr + item_price.mm;
+          
+           
+            $("#total_valueEmcee").text(totalEmcee);
+          
+            return totalEmcee;
+            
+          }
+          
+          $(function()
+           {
+              $(".qty").on("change keyup",calculateTotalEmcee)
+          })
+
+          
+          function calculateTotalCost()
+          {
+            
+            let totalCost = calculateTotalWeddingVenue() + calculateTotalPhotography() + calculateKompangCost() +calculateTotalEmcee() +calculateTotalWeddingDress() + calculateTotalVideography();
+          
+           
+            $("#total_valueCost").text(totalCost);
+          
+            return totalCost;
+            
+          }
+          
+          $(function()
+           {
+              $(".qty").on("change keyup",calculateTotalCost)
+          })
+  
 
   
-        
+
