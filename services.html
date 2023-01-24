@@ -114,100 +114,69 @@
 		</div>
 	</div>
 
-	<div class="container">
+
+	  <div class="container mt-4">
 		<div class="row">
-		  <div class="col-12">
-			<table class="table table-bordered">
-			  <thead>
-				<tr>
-				  <th scope="col">Select</th>
-				  <th scope="col">Venue</th>
-				  <th scope="col">Price</th>
-				  <th scope="col">Day</th>
-				</tr>
-			  </thead>
-			  <tbody>
-				<tr>
-					<td>
-						<input type="radio" id="rb" name="wedding-venue" value="4000"><br>
-					</td>
-				  <td>Royal Ballroom</td>
-				  <td>RM 4000</td>
-				  <td>
-					<label for="rb-qty">Day:</label>
-					<input type="number" id="rb-qty" value="1"><br>
-				  </td>
-				</tr>
-				<tr>
-					<td>
-						<input type="radio" id="gb" name="wedding-venue" value="5000"><br>
-					</td>
-				  <td>Grand Ballroom</td>
-				  <td>RM 5000</td>
-				  <td>
-					<label for="gb-qty">Day:</label>
-					<input type="number" id="gb-qty" value="1"><br>
-				  </td>
-				</tr>
-
-				<tr>
-					<td>
-						<input type="radio" id="gargb" name="wedding-venue" value="4000"><br>
-					</td>
-				  <td>Garden Ballroom</td>
-				  <td>RM 4000</td>
-				  <td>
-					<label for="gargb-qty">Day:</label>
-					<input type="number" id="gargb-qty" value="1"><br>
-				  </td>
-				</tr>
-			  </tbody>
-			</table>
-
-			<input type="button" id="calculate-venue-button" value="Calculate Venue" onclick="calculateVenueCost()">
-
-
-			<div class="row my-4">
-				<div class="col-9 text-right total">
-				 Total
-				</div>
-				
-				<div class="col-2 total-val">
-					<div id="total-ven-cost"></div>
-				</div>
-			  </div>
+		  <div class="col-6 row-heading">
+			Venue
+		  </div>
+		  <div class="col-3 row-heading">
+			Day
+		  </div>
+		  <div class="col-2 row-heading">
+			Price
 		  </div>
 		  
 		</div>
+		<div class="row">
+		  <div class="col-6">
+			1. Royal Ballroom
+		  </div>
+		  <div class="col-3">
+			<input type="number" value="0" class="qty" id="qty_rb"/>
+		  </div>
+		  <div class="col-2">
+			<input type="number" readonly value="0" id="price_rb"/>
+		  </div>
+		</div>
+		
+		 <div class="row my-3">
+		  <div class="col-6">
+			2. Grand Ballroom
+		  </div>
+		  <div class="col-3">
+			<input type="number" value="0" class="qty" id="qty_gb"/>
+		  </div>
+		  <div class="col-2">
+			<input type="number" readonly value="0" id="price_gb"/>
+		  </div>
+		</div>
+		
+		<div class="row my-3">
+		  <div class="col-6">
+			3. Garden Ballroom
+		  </div>
+		  <div class="col-3">
+			<input type="number" class="qty" value="0" id="qty_garb"/>
+		  </div>
+		  <div class="col-2">
+			<input type="number" readonly value="0" id="price_garb"/>
+		  </div>
+		</div>
+		
+		
+		<div class="row my-4">
+		  <div class="col-9 text-right total">
+		   Total
+		  </div>
+		  
+		  <div class="col-2 total-val">
+			<span id="total_valueVenue">0</span>
+		  </div>
+		</div>
+		
 	  </div>
 
-	  <script>
-		function calculateVenueCost() {
-
-		var ventotalCost = 0;
-		var royalballroom = document.getElementById("rb");
-		var grandballroom = document.getElementById("gb");
-		var gardenballroom = document.getElementById("gargb");
-
-		var royalQuantity = document.getElementById("rb-qty").value;
-		var grandQuantity = document.getElementById("gb-qty").value;
-		var gardenQuantity = document.getElementById("gargb-qty").value;
-
-		if (royalballroom.checked) {
-			ventotalCost = 4000 * royalQuantity;
-		}
-		if (grandballroom.checked) {
-			ventotalCost = 5000 * grandQuantity;
-		}
-		if (gardenballroom.checked) {
-			ventotalCost = 4000 * gardenQuantity;
-		}
-		document.getElementById("total-ven-cost").innerHTML = "RM" + ventotalCost;
-
-		return ventotalCost;
-
-	}
-	  </script>
 	   <!-- End Venue -->
 
 	<div id="photography" class="story-box main-photography-box">
@@ -469,9 +438,6 @@
 	<!-- End Videography -->
 	
 	
-	
-	
-	
 	<!-- Start Kompang -->
 	<div id="kompang" class="story-box main-timeline-box">
 		<div class="container">
@@ -525,67 +491,44 @@
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="container mt-4">
 		<div class="row">
-		  <div class="col-12">
-			<table class="table table-bordered">
-			  <thead>
-				<tr>
-				  <th scope="col">Select</th>
-				  <th scope="col">Service</th>
-				  <th scope="col">Price</th>
-				  <th scope="col">Day</th>
-				</tr>
-			  </thead>
-			  <tbody>
-				<tr>
-					<td>
-						<input type="radio" id="kpg" name="kompang-service" value="500"><br>
-					</td>
-				  <td>Package Kompang Dipalu</td>
-				  <td>RM 500</td>
-				  <td>
-					<label for="kpg-qty">Day:</label>
-					<input type="number" id="kpg-qty" value="1"><br>
-				  </td>
-				</tr>
-			  </tbody>
-			</table>
-
-			<input type="button" id="calculate-kompang-button" value="Calculate Kompang" onclick="calculateKompangCost()">
-
-
-			<div class="row my-4">
-				<div class="col-9 text-right total">
-				 Total
-				</div>
-				
-				<div class="col-2 total-val">
-					<div id="total-kpg-cost"></div>
-				</div>
-			  </div>
+		  <div class="col-6 row-heading">
+			Service
+		  </div>
+		  <div class="col-3 row-heading">
+			Day
+		  </div>
+		  <div class="col-2 row-heading">
+			Price
 		  </div>
 		  
 		</div>
+		<div class="row">
+		  <div class="col-6">
+			1. Kompang Dipalu
+		  </div>
+		  <div class="col-3">
+			<input type="number" value="0" class="qty" id="qty_kompang"/>
+		  </div>
+		  <div class="col-2">
+			<input type="number" readonly value="0" id="price_kompang"/>
+		  </div>
+		</div>
+		
+		
+		<div class="row my-4">
+		  <div class="col-9 text-right total">
+		   Total
+		  </div>
+		  
+		  <div class="col-2 total-val">
+			<span id="total_valueKompang">0</span>
+		  </div>
+		</div>
+		
 	  </div>
 
-	  <script>
-		function calculateKompangCost() {
-
-		var kpgtotalCost = 0;
-		var kompang = document.getElementById("kpg");
-
-		var kpgQuantity = document.getElementById("kpg-qty").value;
-
-		if (kompang.checked) {
-			kpgtotalCost = 500 * kpgQuantity;
-		}
-		document.getElementById("total-kpg-cost").innerHTML = "RM" + kpgtotalCost;
-
-		return kpgtotalCost;
-
-	}
-	  </script>
 	<!-- End Kompang -->
 
 	
@@ -968,6 +911,8 @@ function calculateTotalCost() {
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/photography.js"></script>
 	<script src="js/weddingdress.js"></script>
+	<script src="js/kompang.js"></script>
+	<script src="js/calculateservices.js"></script>
     <!-- ALL PLUGINS -->
 	<script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.pogo-slider.min.js"></script> 
