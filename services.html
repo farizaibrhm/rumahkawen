@@ -708,7 +708,7 @@
 		  <span id="total_valueCost">0</span>
 		</div>
 	
-	  </div>
+	</div>
 	  <button id="buttonBook" class="buttonbook" >Book Now</button><br><br>
 	  <button onclick="window.print()" class="buttonsave">Save as PDF</button>
 <br><br>
@@ -729,21 +729,24 @@
 	<br>
     <h2 style="text-align: center;">Book Wedding Services with Rumah Kawen</h2>
     
-    <label for="fname">Name</label>
-    <input type="text" id="custname" name="custname" placeholder="Your Name">
+    <label for="fname">Name *</label>
+    <input type="text" id="custname" name="custname" placeholder="Your Name" required>
 
-    <label for="lname">Phone Number</label>
-    <input type="text" id="custno" name="custno" placeholder="Your Phone Number">
+    <label for="lname">Phone Number *</label>
+    <input type="text" id="custno" name="custno" placeholder="Your Phone Number" required>
 
-	<label for="lname">Email</label>
-    <input type="text" id="custemail" name="custemail" placeholder="Your Email">
+	<label for="lname">Email *</label>
+    <input type="text" id="custemail" name="custemail" placeholder="Your Email" required>
 
-	<label for="lname">Notes</label>
-    <input type="text" id="custnotes" name="custnotes" placeholder="Notes">
+	<label for="ldate">Date *</label>
+	<input id="custdate" class="form-control" type="date" required/>
+
+	<label for="lname" style="margin-top: 10px;">Notes</label>
+    <input type="text" id="custnotes" name="custnotes" placeholder="Notes" >
 
 	<form action="/action_page.php">
-		<label for="img">Upload PDF of Your Booking Services:</label>
-		<input type="file" id="img" name="img" accept="image/*">
+		<label for="img">Upload PDF of Your Booking Services: *</label>
+		<input type="file" id="img" name="img" accept="image/*" required>
 	  </form>
   
     <input type="submit" value="Submit" onclick="messageSuccessful()" class="alert">
@@ -781,7 +784,31 @@
 
 
 	function messageSuccessful() {
-    alert("Thank you for your booking! We will arrange an appointment for you with Rumah kawen team, as soon as possible. Have a nice day.");
+
+		var custname = document.getElementById("custname").value;
+		var custno = document.getElementById("custno").value;
+		var custemail = document.getElementById("custemail").value;
+		var custdate = document.getElementById("custdate").value;
+		var img = document.getElementById("img").value;
+
+		var txt;
+		
+		if (custname == "" || custno == "" || custemail == "" || custdate == "" || img == "") {
+        alert("Please fill all required field ");
+       
+    }else {
+
+		if (confirm("Are you sure you want to confirm your booking ?")) {
+			txt = "You pressed OK!";
+			alert("Thank you for your booking! We will arrange an appointment for you with Rumah kawen team, as soon as possible. Have a nice day.");
+		} else {
+			txt = "You pressed Cancel!";
+		}
+		
+	}
+   
+
+
 }
 	</script>
 	
