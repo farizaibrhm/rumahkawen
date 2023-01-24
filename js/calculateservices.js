@@ -2,6 +2,7 @@
         
         function calculateTotalWeddingVenue()
         {
+          
           let unit_price={
             rb: 4000,
             gb: 5000,
